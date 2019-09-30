@@ -23,7 +23,8 @@ This recipe can be used for direct deployment in Ubuntu, creating Docker images 
 * [./ubuntu-18.04/build.sh](ubuntu-18.04/build.sh) - Update system and build code
 * [./ubuntu-18.04/configure.sh](ubuntu-18.04/configure.sh) - Generate initial config
 
-You may run full install with the folowing bash commands:
+You may run full install with the folowing bash commands.
+Assumed root priveleges for creating directories (`sudo -i`)
 ```bash
 wget -O - https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/build.sh | bash
 wget -O - https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/configure.sh | bash
