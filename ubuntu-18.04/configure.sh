@@ -16,7 +16,7 @@ echo "==> Generate server certificate"
 if [ -f "./server" ]; then
   echo -e "Found existing server certificate, skipping"
 else 
-  read -r SRV1 SRV2 <<< $(generate-random-id -m keys -n server)
+  read -r SRV1 SRV2 <<< $(/usr/local/bin/generate-random-id -m keys -n server)
   echo "Generated server keys: $SRV1 $SRV2"
   cp server /var/ton-work/db/keyring/$SRV1
 fi
@@ -25,7 +25,7 @@ echo "==> Generate client certificate"
 if [ -f "./client" ]; then 
     echo -e "Found existing client certificate, skipping"
 else
-  read -r CLNT1 CLNT2 <<< $(generate-random-id -m keys -n client)
+  read -r CLNT1 CLNT2 <<< $(/usr/local/bin/generate-random-id -m keys -n client)
   echo -e "Generate client private certificate $CLNT1 $CLNT2"
   cp client /var/ton-work/db/keyring/$CLNT1
   {
